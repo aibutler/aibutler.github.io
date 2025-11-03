@@ -34,12 +34,6 @@ jobs:
       # run: dotnet publish BlazorWebAssemblyApp.csproj -c Release -o app/publish --nologo
       # --nologo ist nur kosmetisch. Wichtiger ist die Konfiguration der Projektdatei, falls Sie den Base Path im Build statt in der index.html setzen wollen.
       
-    - name: Rewrite base href
-      uses: SteveSandersonMS/ghaction-rewrite-base-href@5b54862a8831e012d4f1a8b2660894415fdde8ec # v1.1.0
-      with:
-        html_path: app/publish/wwwroot/index.html
-        base_href: /aibutler.github.io/
-
     # Wenn Benutzer nach dem Deployment die Anwendung direkt aufrufen (https://aibutler.github.io/) funktioniert es, aber bei einem Deep-Link 
     # oder nach einem Refresh auf einer Subseite (z.B. /radzengrid) erhalten sie einen 404 Not Found Fehler. GitHub Pages ist ein statischer 
     # Host und weiß nicht, wie es mit dem Blazor-Routing umgehen soll. Die Lösung besteht darin, die index.html als 404.html zu kopieren. 
