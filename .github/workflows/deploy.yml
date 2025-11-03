@@ -53,4 +53,4 @@ jobs:
         #publish_dir: app/publish/dist # Das Verzeichnis, das die statischen Dateien enthält
         publish_dir: app/publish/wwwroot
         publish_branch: gh-pages # Der Branch, den GitHub Pages liest
-        cname: aibutler.github.io # Optional, wenn Sie eine Custom Domain haben, sonst entfernen
+        #cname: aibutler.github.io # Optional, wenn Sie eine Custom Domain haben, sonst entfernen
