@@ -5,7 +5,7 @@ on:
     branches: [ "main" ] # Oder "master", je nach Ihrem Hauptbranch
   workflow_dispatch:
 
-  # HIER MUSS DER BERECHTIGUNGSBLOCK EINGEFÜGT WERDEN
+# HIER MUSS DER BERECHTIGUNGSBLOCK EINGEFÜGT WERDEN
 permissions:
   contents: write # KRITISCH: Erlaubt dem Workflow, in Repository-Inhalte (inkl. gh-pages) zu schreiben.
 
@@ -38,8 +38,8 @@ jobs:
     # oder nach einem Refresh auf einer Subseite (z.B. /radzengrid) erhalten sie einen 404 Not Found Fehler. GitHub Pages ist ein statischer 
     # Host und weiß nicht, wie es mit dem Blazor-Routing umgehen soll. Die Lösung besteht darin, die index.html als 404.html zu kopieren. 
     # GitHub Pages verwendet die 404.html als Fallback für nicht gefundene Routen, wodurch Blazor das Routing übernehmen kann.
-    - name: Fix 404 Routing for GitHub Pages
-      run: cp app/publish/wwwroot/index.html app/publish/wwwroot/404.html
+    #- name: Fix 404 Routing for GitHub Pages
+    #  run: cp app/publish/wwwroot/index.html app/publish/wwwroot/404.html
 
     #- name: Adjust output directory for gh-pages
     #  # Die statischen Dateien liegen im 'wwwroot' des 'publish' Ordners.
