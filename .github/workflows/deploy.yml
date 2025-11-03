@@ -41,6 +41,10 @@ jobs:
     - name: Fix 404 Routing for GitHub Pages
       run: cp app/publish/wwwroot/index.html app/publish/wwwroot/404.html
 
+    # WICHTIG für Blazor/WebAssembly auf GitHub Pages: Jekyll deaktivieren, damit Ordner wie _framework nicht ignoriert werden
+    - name: Disable Jekyll
+      run: touch app/publish/wwwroot/.nojekyll
+
     #- name: Adjust output directory for gh-pages
     #  # Die statischen Dateien liegen im 'wwwroot' des 'publish' Ordners.
     #  run: mv app/publish/wwwroot app/publish/dist
